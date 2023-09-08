@@ -3,12 +3,17 @@ import type { NextApiRequest, NextApiResponse } from "next";
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { query } = req;
+    const { array }: string = query;
+    const arr = array?.split(",");
+    const letters = arr.filter((elem: any) => {
+      return /[a-zA-Z]/.test(elem);
+    });
+    const numbers = arr.filter((elem: any) => {
+      return /[0-9]/.test(elem);
+    });
+    console.log(letters);
+    console.log(numbers);
     if (req.method === "POST") {
-      const { eq } = query;
-      const string = (eq as string).substring(4);
-      console.log(string);
-      const arr = (eq as string).split(",");
-      console.log(arr);
       res.status(200).json({
         status: "is_connected",
         operation_code: "1",
