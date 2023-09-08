@@ -3,17 +3,17 @@ import type { NextApiRequest, NextApiResponse } from "next";
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { query } = req;
-    const { array }: any = query;
-    const arr = array?.split(",");
-    const letters = arr.filter((elem: any) => {
-      return /[a-zA-Z]/.test(elem);
-    });
-    const numbers = arr.filter((elem: any) => {
-      return /[0-9]/.test(elem);
-    });
-    letters.sort();
-    letters.reverse();
     if (req.method === "POST") {
+      const { array }: any = query;
+      const arr = array?.split(",");
+      const letters = arr.filter((elem: any) => {
+        return /[a-zA-Z]/.test(elem);
+      });
+      const numbers = arr.filter((elem: any) => {
+        return /[0-9]/.test(elem);
+      });
+      letters.sort();
+      letters.reverse();
       res.status(200).json({
         status: "is_connected",
         // eslint-disable-next-line camelcase
@@ -25,7 +25,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         // eslint-disable-next-line camelcase
         highest_alphabet: letters[0],
       });
-    } else {
+    } else if (req.method === "GET") {
       res.status(200).json({
         status: "is_connected",
         // eslint-disable-next-line camelcase
