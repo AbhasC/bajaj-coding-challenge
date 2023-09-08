@@ -16,16 +16,20 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "POST") {
       res.status(200).json({
         status: "is_connected",
-        opCode: "1",
+        // eslint-disable-next-line camelcase
+        operation_code: "1",
         "User-id": "Abhas Chatterjee 22/01/2002",
         "Roll number": "RA2011026020047",
         numbers: numbers,
         alphabets: letters,
+        // eslint-disable-next-line camelcase
+        highest_alphabet: letters[0],
       });
     } else {
       res.status(200).json({
         status: "is_connected",
-        opCode: "1",
+        // eslint-disable-next-line camelcase
+        operation_code: "1",
         "User-id": "Abhas Chatterjee 22/01/2002",
         "Roll number": "RA2011026020047",
       });
