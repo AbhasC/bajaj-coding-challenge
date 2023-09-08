@@ -1,10 +1,3 @@
-# Next.js starter template
+# Bajaj Coding Challenge Round 2
 
-This is a starter template for [Next.js](https://nextjs.org/) projects.  
-This template includes the following features:
-
-  * [TypeScript](https://www.typescriptlang.org/)
-  * [ESLint](https://eslint.org/) with plugins 
-  * [Sass](https://sass-lang.com/)
-
-FYI: I have git ignored all css files and any lock files. 
+## Made by Abhas Chatterjee (RA2011026020047)
